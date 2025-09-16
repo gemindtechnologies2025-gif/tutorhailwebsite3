@@ -1,0 +1,29 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "D5ZBZB537L.com.tutorHail",
+        "components": [
+          {
+            "/": "/*",
+            "comment": "Matches any URL whose path starts with URL_PATH and instructs the system not to open it as a universal link"
+          },
+          {
+            "/": "*",
+            "comment": "Matches any URL whose path starts with URL_PATH and instructs the system not to open it as a universal link"
+          }
+        ],
+        "paths": [
+          "*",
+          "/"
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "D5ZBZB537L.com.tutorHail"
+    ]
+  }
+}

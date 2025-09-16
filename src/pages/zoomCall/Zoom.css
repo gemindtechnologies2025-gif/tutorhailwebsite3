@@ -1,0 +1,109 @@
+#sessionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* max-height does something strange. Try to make it always responsive */
+  /* max-height: 100vh; */
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* the ui toolkit needs to remain the same height no matter the view */
+/* #gallery-vdieo-container {
+  padding-top: 138px;
+} */
+/* maybe make speaker view the right aspect ratio? */
+app-uitoolkit {
+  /* max-height: 100vh; */
+  /* max-width: 100vw; */
+  /* aspect-ratio: auto 4 / 3; */
+  width: 100%;
+  /* max-width: 1000px; */
+}
+
+app-previewkit {
+  width: 100%;
+}
+
+#rating {
+  display: none;
+  text-align: center;
+}
+
+#rating a {
+  color: #0751e4;
+}
+
+#sessionNameRequired,
+#nameRequired,
+#passcodeLength {
+  color: red;
+  display: none;
+}
+
+.header {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.header img {
+  width: 50px;
+}
+
+.join-flow {
+  width: 200px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.join-flow input {
+  border: 1px solid gray;
+}
+
+.join-flow input,
+.join-flow button,
+select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.join-flow button {
+  cursor: pointer;
+  background-color: #0751e4;
+  border: none;
+  color: #ffffff;
+  transition: background-color 0.5s;
+}
+
+.join-flow button:hover {
+  background-color: #003cb3;
+}
+
+.join-flow small {
+  text-align: center;
+  display: block;
+}
+
+.join-flow small a {
+  color: #0751e4;
+}
+
+.material-icons {
+  font-family: "Material Icons" !important;
+}
+
+#join-flow {
+  position: relative;
+  width: 100%;
+  transform: scale(0.9);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.view-video {
+  border-radius: unset !important;
+}/*# sourceMappingURL=Zoom.css.map */
