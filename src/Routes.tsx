@@ -355,6 +355,7 @@ const Routing = () => {
         />
 
         <Route path="/zoom-call/:id" element={<Pages.ZoomCall />} />
+        <Route path="/dyte-call/:id" element={<Pages.DyteCall/>} />
       </Route>
     </Routes>
   );

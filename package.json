@@ -5,6 +5,8 @@
   "dependencies": {
     "@date-fns/utc": "^1.2.0",
     "@date-io/dayjs": "^3.2.0",
+    "@dytesdk/react-ui-kit": "^3.0.8",
+    "@dytesdk/react-web-core": "^3.1.7",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@material-ui/core": "^4.12.4",
@@ -27,7 +29,7 @@
     "@zoom/videosdk": "^1.12.14",
     "@zoom/videosdk-ui-toolkit": "^1.12.1-1",
     "@zoomus/websdk": "^1.7.8",
-    "axios": "^1.7.7",
+    "axios": "^1.12.2",
     "clsx": "^2.1.1",
     "compressorjs": "^1.2.1",
     "crypto-js": "^4.2.0",

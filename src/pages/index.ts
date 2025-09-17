@@ -58,7 +58,7 @@ import TutorDocumentStatusEdit from "./auth/asTutor/editProfile/step5_edit";
 import TutorExperienceEdit from "./auth/asTutor/editProfile/step6_edit";
 import RefundPolicy from "./cms/refundPolicy";
 import Eula from "./cms/eula";
-import ZoomCall from "./zoomCall";
+import ZoomCall from "./dyte";
 import InquireyPage from "./parentDashboard/inquiry";
 import Recommended from "./parentDashboard/recommendedClasses";
 import { Formdiscussion } from "./parentDashboard/Discussion";
@@ -103,6 +103,7 @@ import { TutorPosts } from "./tutorDashboard/myPosts";
 import PopularClasses from "./parentDashboard/popularClasses";
 import ClassPageParent from "./parentDashboard/classesPage";
 import FreeClassesPage from "./parentDashboard/freeClasses";
+import DyteCall from "./dyte";
 
 export default {
   Home,
@@ -191,6 +192,7 @@ export default {
   TutorFollowers,
 
   ZoomCall,
+  DyteCall,
   InquireyPage,
   Recommended,
   Formdiscussion,

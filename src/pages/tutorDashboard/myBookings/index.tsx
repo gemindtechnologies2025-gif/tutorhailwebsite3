@@ -107,11 +107,11 @@ const handleChange1 = (event: React.SyntheticEvent, newValue: number) => {
 
 
 
-  const handleJoinCallByParent = (id: string) => {
-    navigate(`/zoom-call/${id}?type=tutor`, {
+  const handleJoinCallByParent = (item: any) => {
+    navigate(`/dyte-call/${item?._id}?type=tutor`, {
       state: {
         data: {
-          sessionName: id,
+          dyteId: item?.classData?.dyteMeeting?.meetingId,
           displayName: user?.name,
           roleType: "0",
           sessionIdleTimeoutMins: "60",
@@ -551,7 +551,7 @@ const handleChange1 = (event: React.SyntheticEvent, newValue: number) => {
                                         <b
                                         > </b>
                                         <button
-                                          onClick={() => handleJoinCallByParent(item?.classSlots?._id)}
+                                          onClick={() => handleJoinCallByParent(item)}
                                           className="btn btn-primary">Join</button>
                                       </div>
                                     </div>
