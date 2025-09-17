@@ -79,7 +79,7 @@ strong {
 }
 
 .slide_fliter {
-  >.d_flex {
+  > .d_flex {
     display: flex;
     gap: 10px;
 
@@ -90,11 +90,13 @@ strong {
     }
   }
 
-  :is(input,
-    input.form-control,
-    select,
-    .MuiSelect-select,
-    .MuiAutocomplete-root .MuiInputBase-root input) {
+  :is(
+      input,
+      input.form-control,
+      select,
+      .MuiSelect-select,
+      .MuiAutocomplete-root .MuiInputBase-root input
+    ) {
     padding: 5px 20px;
     height: 41px;
     background-color: #fff;
@@ -288,7 +290,6 @@ figure {
 }
 
 .u {
-
   &_spc,
   &t_spc {
     padding-top: 40px;
@@ -410,7 +411,7 @@ figure {
     justify-content: space-between;
   }
 
-  >* {
+  > * {
     flex-shrink: 0;
     width: 100%;
     max-width: 100%;
@@ -420,7 +421,7 @@ figure {
 
 .gap {
   &_p {
-    >* {
+    > * {
       padding-left: var(--gap_x);
     }
 
@@ -442,7 +443,7 @@ figure {
   }
 
   &_m {
-    >* {
+    > * {
       margin-left: var(--gap_x);
     }
 
@@ -499,12 +500,12 @@ button.MuiButton-root {
 }
 
 .btn {
-  min-height: 40px;
-  border-radius: 25px;
+  min-height: 25px;
+  border-radius: 20px;
   border: none;
-  padding: 5px 25px;
-  font-size: 14px;
-  font-weight: 400;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 500;
   line-height: 1;
 
   &.primary {
@@ -557,7 +558,6 @@ button.MuiButton-root {
 }
 
 button.MuiButton-root {
-
   &.MuiButton-textSizeSmall,
   &.MuiButton-outlinedSizeSmall {
     font-size: 16px;
@@ -635,7 +635,6 @@ button.MuiButton-root {
 
 // Form | Start
 .form {
-
   .gap_p,
   .gap_m {
     --gap_x: 20px;
@@ -985,7 +984,7 @@ input[type="checkbox"]:checked::before {
       border-color: $c_primary;
     }
 
-    &~ :is(fieldset, .MuiSvgIcon-root) {
+    & ~ :is(fieldset, .MuiSvgIcon-root) {
       display: none;
     }
 
@@ -995,7 +994,7 @@ input[type="checkbox"]:checked::before {
   }
 
   &.opt_fields {
-    >div {
+    > div {
       justify-content: center;
       gap: 15px;
     }
@@ -1019,7 +1018,6 @@ input[type="checkbox"]:checked::before {
   }
 
   .MuiInput-underline {
-
     &::after,
     &::before {
       display: none;
@@ -1130,7 +1128,7 @@ input[type="checkbox"]:checked::before {
       }
     }
 
-    &.MuiTextField-root>.MuiInputBase-root {
+    &.MuiTextField-root > .MuiInputBase-root {
       padding: 0;
     }
 
@@ -1194,7 +1192,6 @@ input[type="checkbox"]:checked::before {
       }
 
       &:has(.MuiInputAdornment-positionStart) {
-
         input,
         .MuiSelect-select {
           padding-left: 50px !important;
@@ -1202,14 +1199,12 @@ input[type="checkbox"]:checked::before {
       }
 
       &:has(.MuiInputAdornment-positionEnd) {
-
         input,
         .MuiSelect-select {
           padding-right: 50px !important;
         }
 
         &:has(.verify_btn) {
-
           input,
           .MuiSelect-select {
             padding-right: 80px !important;
@@ -1361,7 +1356,7 @@ input[type="checkbox"]:checked::before {
         font-size: 18px;
       }
 
-      +p {
+      + p {
         font-size: 14px;
         margin-bottom: 25px;
       }
@@ -1486,7 +1481,7 @@ input[type="checkbox"]:checked::before {
       }
     }
 
-    >svg {
+    > svg {
       width: 25px;
       height: 25px;
       color: $c_white;
@@ -1675,7 +1670,7 @@ mark.high_light {
       overflow: auto;
     }
 
-    +.MuiTabs-indicator {
+    + .MuiTabs-indicator {
       display: none;
     }
 
@@ -1724,7 +1719,7 @@ mark.high_light {
   }
 
   [role="tabpanel"] {
-    >.MuiBox-root {
+    > .MuiBox-root {
       padding: 0;
     }
   }
@@ -1763,8 +1758,7 @@ mark.high_light {
       }
 
       .icon_flex.icn_dom {
-
-        @media (max-width:1200px) {
+        @media (max-width: 1200px) {
           position: absolute;
           top: 100%;
           left: 0;
@@ -1789,7 +1783,6 @@ mark.high_light {
             opacity: 1;
             visibility: visible;
           }
-
         }
 
         @include breakpoint(mobile) {
@@ -1854,13 +1847,13 @@ mark.high_light {
           @include d_flx(center, flex-start, 4px);
           flex-direction: column;
 
-          @media screen and (max-width:1200px) {
+          @media screen and (max-width: 1200px) {
             flex-direction: row;
             gap: 10px;
           }
 
           &.profile {
-            >img {
+            > img {
               width: 30px;
               height: 30px;
               border-radius: 50%;
@@ -1892,7 +1885,7 @@ mark.high_light {
             right: 3px;
             text-align: center;
 
-            @media screen and (max-width:1200px) {
+            @media screen and (max-width: 1200px) {
               right: unset;
               left: 20px;
             }
@@ -1902,7 +1895,8 @@ mark.high_light {
         &.actv {
           figure {
             img {
-              filter: invert(42%) sepia(95%) saturate(405%) hue-rotate(92deg) brightness(92%) contrast(91%) !important;
+              filter: invert(42%) sepia(95%) saturate(405%) hue-rotate(92deg)
+                brightness(92%) contrast(91%) !important;
             }
 
             figcaption {
@@ -2141,7 +2135,7 @@ mark.high_light {
         font-size: 22px;
       }
 
-      @media (min-width:768px) {
+      @media (min-width: 768px) {
         display: none;
       }
     }
@@ -2179,7 +2173,6 @@ mark.high_light {
     }
 
     &:hover {
-
       &::after,
       &::before {
         width: 21px;
@@ -2452,9 +2445,11 @@ mark.high_light {
 
   .aside_menu {
     border: 1px solid #3ba158;
-    background: linear-gradient(180deg,
-        rgba(39, 142, 68, 0.8) 0%,
-        rgba(25, 102, 47, 0.8) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(39, 142, 68, 0.8) 0%,
+      rgba(25, 102, 47, 0.8) 100%
+    );
     padding: 25px 22px;
     border-radius: 10px;
     min-height: calc(100vh - 229px);
@@ -3030,9 +3025,11 @@ mark.high_light {
     bottom: 0;
     position: absolute;
     transform: translate(-45%, 27%);
-    background: radial-gradient(50% 50% at 50% 50%,
-        #dffbdf 0%,
-        rgba(223, 251, 223, 0) 100%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #dffbdf 0%,
+      rgba(223, 251, 223, 0) 100%
+    );
     width: 710px;
     height: 710px;
     opacity: 0.8;
@@ -3047,9 +3044,11 @@ mark.high_light {
     right: 0;
     position: absolute;
     transform: translate(20%, -35%);
-    background: radial-gradient(50% 50% at 50% 50%,
-        #dffbdf 0%,
-        rgba(223, 251, 223, 0) 100%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #dffbdf 0%,
+      rgba(223, 251, 223, 0) 100%
+    );
     width: 752px;
     height: 752px;
     opacity: 0.6;
@@ -3632,10 +3631,10 @@ mark.high_light {
         padding: 0 10px;
       }
 
-      >div {
+      > div {
         height: 100%;
 
-        >div {
+        > div {
           height: 100%;
         }
       }
@@ -3777,7 +3776,7 @@ mark.high_light {
       align-items: stretch;
       flex: 1;
 
-      >p {
+      > p {
         font-size: 13px;
         color: #6a6a6a;
         letter-spacing: 0.01em;
@@ -3817,7 +3816,7 @@ mark.high_light {
     }
   }
 
-  >.home_sc_slider {
+  > .home_sc_slider {
     .tutor_card_v2 {
       width: 100%;
     }
@@ -4270,7 +4269,7 @@ mark.high_light {
     }
 
     .slick-current {
-      +.slick-slide {
+      + .slick-slide {
         .testiThumb_single {
           bottom: 0;
 
@@ -4764,7 +4763,7 @@ mark.high_light {
         align-items: flex-start;
       }
 
-      >div {
+      > div {
         width: calc(100% / 2 - var(--gap_x));
 
         @include breakpoint(laptop) {
@@ -5096,7 +5095,7 @@ mark.high_light {
         }
       }
 
-      +p {
+      + p {
         font-size: 14px;
         color: #717171;
         margin-bottom: 30px;
@@ -5156,7 +5155,7 @@ mark.high_light {
       }
     }
 
-    +.bottom_text {
+    + .bottom_text {
       margin-top: 40px;
 
       @include breakpoint(laptop) {
@@ -5918,15 +5917,16 @@ mark.high_light {
     }
 
     .form {
-
-      :is(input,
-        select,
-        textarea,
-        textarea.MuiOutlinedInput-input,
-        input.MuiInputBase-input,
-        input.MuiInputBase-input:-webkit-autofill,
-        .control_group .MuiSelect-select,
-        .form .react-tel-input .form-control) {
+      :is(
+          input,
+          select,
+          textarea,
+          textarea.MuiOutlinedInput-input,
+          input.MuiInputBase-input,
+          input.MuiInputBase-input:-webkit-autofill,
+          .control_group .MuiSelect-select,
+          .form .react-tel-input .form-control
+        ) {
         font-size: 14px;
       }
 
@@ -6826,7 +6826,7 @@ mark.high_light {
       width: calc(100% - var(--gap_x));
     }
 
-    >p {
+    > p {
       color: $c_white;
       padding: 8px 20px;
       background-color: #2b2c2a;
@@ -7232,7 +7232,7 @@ mark.high_light {
           }
         }
 
-        >figure {
+        > figure {
           width: 31px;
           height: 31px;
           min-width: 31px;
@@ -8222,9 +8222,9 @@ mark.high_light {
       p {
         color: #211e1e;
 
-        >span,
-        >strong,
-        >small {
+        > span,
+        > strong,
+        > small {
           display: block;
         }
 
@@ -9033,7 +9033,7 @@ mark.high_light {
       min-width: 100%;
     }
 
-    >img {
+    > img {
       width: 100%;
       height: 100%;
       object-fit: contain;
@@ -9163,7 +9163,7 @@ mark.high_light {
       }
     }
 
-    >p {
+    > p {
       display: flex;
       align-items: center;
       font-size: 14px;
@@ -9175,7 +9175,8 @@ mark.high_light {
         top: 2px;
         height: 16px;
         position: relative;
-        filter: brightness(0) invert(32%) sepia(99%) saturate(1762%) hue-rotate(122deg) brightness(99%) contrast(96%);
+        filter: brightness(0) invert(32%) sepia(99%) saturate(1762%)
+          hue-rotate(122deg) brightness(99%) contrast(96%);
       }
     }
 
@@ -9358,7 +9359,7 @@ mark.high_light {
       border-radius: 5px;
     }
 
-    >h2 {
+    > h2 {
       color: $c_black;
       font-size: 18px;
       font-weight: 500;
@@ -9625,7 +9626,7 @@ mark.high_light {
     h2 {
       margin-bottom: 10px;
 
-      +p {
+      + p {
         margin-bottom: 30px;
 
         @include breakpoint(laptop) {
@@ -9677,7 +9678,7 @@ mark.high_light {
         width: 42%;
       }
 
-      >img {
+      > img {
         width: 100%;
         height: 100%;
         object-fit: contain;
@@ -9873,7 +9874,7 @@ mark.high_light {
   .control_group.opt_fields {
     margin-block: 35px 60px;
 
-    >div {
+    > div {
       gap: 25px;
     }
 
@@ -10641,7 +10642,8 @@ mark.high_light {
   figure {
     min-width: 20px;
     display: inline-flex;
-    filter: brightness(0) invert(41%) sepia(79%) saturate(3801%) hue-rotate(120deg) brightness(98%) contrast(96%);
+    filter: brightness(0) invert(41%) sepia(79%) saturate(3801%)
+      hue-rotate(120deg) brightness(98%) contrast(96%);
     position: relative;
     top: -1px;
   }
@@ -10871,7 +10873,7 @@ mark.high_light {
         &.Mui-checked {
           transform: translateX(32px);
 
-          +.MuiSwitch-track {
+          + .MuiSwitch-track {
             background: $c_primary_gradient;
           }
         }
@@ -11276,7 +11278,7 @@ mark.high_light {
     h2 {
       text-align: center;
 
-      +p {
+      + p {
         text-align: center;
       }
     }
@@ -11441,7 +11443,7 @@ body {
 .filter_aside {
   width: calc(25% - var(--gap_x));
 
-  >.roundIcon_btn {
+  > .roundIcon_btn {
     width: 30px;
     height: 30px;
     min-width: 30px;
@@ -12003,7 +12005,7 @@ body {
 .pTutor_sc {
   .parent_dash {
     .gap_m {
-      >div {
+      > div {
         width: calc(25% - var(--gap_x));
       }
 
@@ -12011,7 +12013,7 @@ body {
         width: calc(75% - var(--gap_x));
 
         .tutor_list {
-          >div {
+          > div {
             width: calc(100% / 3 - var(--gap_x));
           }
         }
@@ -12404,7 +12406,7 @@ body {
           }
 
           .MuiPickersFadeTransitionGroup-root {
-            >div {
+            > div {
               margin-right: 0;
               font-size: 18px;
               color: #0e0e0f;
@@ -12609,7 +12611,7 @@ body {
     display: none;
   }
 
-  +.MuiBackdrop-root {
+  + .MuiBackdrop-root {
     margin: 0;
   }
 }
@@ -13331,7 +13333,7 @@ body {
     position: relative;
     overflow: clip;
 
-    >figure {
+    > figure {
       margin: -15px;
 
       img {
@@ -13367,7 +13369,7 @@ body {
       @include d_flx(end, flex-start, 10px);
       flex-wrap: nowrap;
 
-      >figure {
+      > figure {
         max-width: 77px;
         max-height: 77px;
         border-radius: 50%;
@@ -13382,7 +13384,6 @@ body {
           padding: 3px;
           background: #fff;
           position: relative;
-
         }
 
         img {
@@ -13414,7 +13415,7 @@ body {
         }
       }
 
-      +button {
+      + button {
         margin-top: 20px;
       }
     }
@@ -13437,7 +13438,7 @@ body {
         transition: $transition;
         margin-bottom: 30px;
 
-        >figure {
+        > figure {
           @include d_flx(center, flex-start, 10px);
 
           figcaption {
@@ -13464,7 +13465,8 @@ body {
         &.actv {
           figure {
             img {
-              filter: invert(42%) sepia(95%) saturate(405%) hue-rotate(92deg) brightness(92%) contrast(91%) !important;
+              filter: invert(42%) sepia(95%) saturate(405%) hue-rotate(92deg)
+                brightness(92%) contrast(91%) !important;
             }
 
             figcaption {
@@ -13479,7 +13481,7 @@ body {
       }
     }
 
-    @media (max-width:1200px) {
+    @media (max-width: 1200px) {
       position: absolute;
       top: 101%;
       left: 0;
@@ -13501,7 +13503,6 @@ body {
         opacity: 1;
         visibility: visible;
       }
-
     }
   }
 
@@ -13587,7 +13588,7 @@ body {
             }
           }
 
-          +button {
+          + button {
             min-height: 30px;
             margin-top: 10px;
             max-width: 85px;
@@ -13622,11 +13623,11 @@ body {
     border-radius: 10px;
     margin-top: 20px;
 
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width: 1200px) {
       background-position: left;
     }
 
-    >.group {
+    > .group {
       padding: 25px 18px;
 
       h4 {
@@ -13699,7 +13700,7 @@ body {
   border-radius: 15px;
   padding: 15px;
 
-  @media screen and (max-width:1200px) {
+  @media screen and (max-width: 1200px) {
     max-width: 100%;
   }
 
@@ -13715,13 +13716,12 @@ body {
   }
 
   .profile_row {
-    >.lt {
+    > .lt {
       @include d_flx(center, space-between);
       margin-block: 20px;
 
       figure {
         @include d_flx(center, flex-start, 15px);
-
 
         img {
           width: 70px;
@@ -13851,7 +13851,7 @@ body {
         ul {
           gap: 32px;
 
-          @media screen and (max-width:767px) {
+          @media screen and (max-width: 767px) {
             gap: 5px;
             justify-content: flex-start;
             padding: 10px;
@@ -13860,25 +13860,23 @@ body {
           li {
             width: calc(100% / 5 - var(--gap_x));
 
-            @media screen and (max-width:767px) {
+            @media screen and (max-width: 767px) {
               width: 100%;
             }
 
             figure {
               flex-direction: column;
               width: 75px;
-              gap: 0
+              gap: 0;
             }
           }
         }
       }
     }
-
-
   }
 
   .social_footer {
-    >.row {
+    > .row {
       @include d_flx(center, space-between);
       border-top: 1px solid #f4f4f4;
       padding-top: 10px;
@@ -13962,7 +13960,7 @@ body {
       li {
         position: relative;
 
-        >div {
+        > div {
           @include d_flx(flex-start, flex-start, 20px);
 
           figure {
@@ -14081,7 +14079,7 @@ body {
   position: relative;
   padding: 15px;
 
-  >figure {
+  > figure {
     position: relative;
     margin: -15px;
     height: 147px;
@@ -14218,7 +14216,7 @@ body {
     .follow_cnt {
       position: relative;
 
-      >div {
+      > div {
         h5 {
           font-weight: 500;
           font-size: 18px;
@@ -14286,11 +14284,9 @@ body {
             }
           }
         }
-
-
       }
 
-      +.enroll_price {
+      + .enroll_price {
         background: #64a44214;
         border-radius: 30px;
         text-align: center;
@@ -14623,7 +14619,7 @@ body {
     .user {
       @include d_flx(end, space-between);
 
-      >figure {
+      > figure {
         width: 60px;
         height: 60px;
         border-radius: 50%;
@@ -14723,7 +14719,7 @@ body {
     }
   }
 
-  >* {
+  > * {
     position: relative;
     z-index: 2;
   }
@@ -14833,7 +14829,7 @@ body {
           font-size: 16px;
         }
 
-        >div {
+        > div {
           @include d_flx(stretch, flex-start, 5px);
           flex-wrap: nowrap;
         }
@@ -14994,18 +14990,18 @@ body {
     flex-wrap: nowrap;
     width: 100%;
 
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width: 1200px) {
       flex-wrap: wrap;
     }
 
-    >.MuiBox-root {
+    > .MuiBox-root {
       width: 100%;
       position: sticky;
       max-height: calc(100vh - 140px);
       overflow: auto;
       top: 125px;
 
-      @media screen and (max-width:1200px) {
+      @media screen and (max-width: 1200px) {
         position: initial;
         max-height: unset;
         overflow: unset;
@@ -15022,7 +15018,7 @@ body {
       min-width: 563px;
       width: 100%;
 
-      @media screen and (max-width:1200px) {
+      @media screen and (max-width: 1200px) {
         max-width: 100%;
         min-width: 100%;
       }
@@ -15032,17 +15028,15 @@ body {
       }
 
       .gap_m {
-        >div {
+        > div {
           width: calc(100% / 3 - var(--gap_x));
 
-          @media screen and (max-width:575px) {
+          @media screen and (max-width: 575px) {
             width: calc(100% / 2 - var(--gap_x));
-
           }
 
-          @media screen and (max-width:480px) {
+          @media screen and (max-width: 480px) {
             width: calc(100% / 1 - var(--gap_x));
-
           }
 
           &.free_classes {
@@ -15057,7 +15051,6 @@ body {
                 width: 100%;
               }
             }
-
           }
         }
       }
@@ -15079,8 +15072,8 @@ body {
         }
 
         .cstmm_tabs {
-          +.gap_m {
-            >div {
+          + .gap_m {
+            > div {
               width: calc(100% / 2 - var(--gap_x));
             }
           }
@@ -15128,7 +15121,7 @@ body {
           flex-wrap: nowrap;
           width: 100%;
 
-          >figure {
+          > figure {
             min-width: 45px;
             height: 45px;
             width: 45px;
@@ -15176,7 +15169,7 @@ body {
           width: 100%;
           margin-top: 15px;
 
-          >ul {
+          > ul {
             @include d_flx(flex-start, center);
             flex-wrap: nowrap;
             width: 100%;
@@ -15464,7 +15457,7 @@ body {
           .profile_lt {
             @include d_flx(center, flex-start, 20px);
 
-            >div {
+            > div {
               h2 {
                 font-weight: 700;
                 font-size: 24px;
@@ -15511,7 +15504,7 @@ body {
                 font-weight: 700;
                 font-size: 24px;
 
-                @include breakpoint (mobile) {
+                @include breakpoint(mobile) {
                   font-size: 16px;
                 }
               }
@@ -15539,7 +15532,7 @@ body {
   /*filter scss*/
   .filter_wrp {
     .filter_row {
-      >ul {
+      > ul {
         box-shadow: 0px 2px 22px 0px #0000001a;
         background: $c_white;
         @include d_flx(center, flex-start, 10px);
@@ -15641,7 +15634,7 @@ body {
           padding-bottom: 15px;
           position: relative;
 
-          >div {
+          > div {
             @include d_flx(center, flex-start, 10px);
             flex-wrap: nowrap;
 
@@ -15692,7 +15685,7 @@ body {
 
         &.feed_list {
           li {
-            >div {
+            > div {
               align-items: flex-start;
 
               button {
@@ -15855,7 +15848,7 @@ body {
     &.addvideo_upload {
       position: relative;
 
-      @media screen and (max-width:1200px) {
+      @media screen and (max-width: 1200px) {
         max-width: 100%;
       }
 
@@ -15958,7 +15951,7 @@ body {
         @include d_flx(center, flex-start, 10px);
         flex-wrap: nowrap;
 
-        >button {
+        > button {
           font-size: 13px;
           font-weight: 400;
           white-space: nowrap;
@@ -15966,9 +15959,9 @@ body {
       }
 
       .form_group {
-        >.control_group {
+        > .control_group {
           .MuiInputBase-root {
-            >div {
+            > div {
               background-color: #f7eded;
             }
 
@@ -16163,8 +16156,7 @@ body {
 
   .pfd_wrp {
     .gap_m {
-
-      >.MuiBox-root.css-0 {
+      > .MuiBox-root.css-0 {
         width: calc(26% - var(--gap_x));
         position: sticky;
         top: 120px;
@@ -16211,12 +16203,11 @@ body {
       overflow: auto;
       top: 125px;
 
-      @media screen and (max-width:1200px) {
+      @media screen and (max-width: 1200px) {
         width: calc(100% - var(--gap_x));
         max-height: unset;
         position: initial;
         overflow: unset;
-
       }
 
       &::-webkit-scrollbar {
@@ -16227,9 +16218,8 @@ body {
     .md_ul {
       width: calc(37% - var(--gap_x));
 
-      @include breakpoint (normal) {
+      @include breakpoint(normal) {
         width: calc(100% - var(--gap_x));
-
       }
 
       li {
@@ -16244,7 +16234,7 @@ body {
     .answer_sec {
       width: calc(37% - var(--gap_x));
 
-      @include breakpoint (normal) {
+      @include breakpoint(normal) {
         width: calc(100% - var(--gap_x));
       }
 
@@ -16255,7 +16245,7 @@ body {
         border-radius: 15px;
         margin-block: 20px;
 
-        >button {
+        > button {
           max-width: 90px;
           min-height: 28px;
           padding-inline: initial;
@@ -16299,14 +16289,12 @@ body {
     .tutors_card {
       width: calc(33% - var(--gap_x)) !important;
 
-      @media screen and (max-width:767px) {
+      @media screen and (max-width: 767px) {
         width: calc(50% - var(--gap_x)) !important;
-
       }
 
-      @media screen and (max-width:575px) {
+      @media screen and (max-width: 575px) {
         width: calc(100% - var(--gap_x)) !important;
-
       }
     }
 
@@ -16331,9 +16319,11 @@ body {
       content: "";
       width: 100%;
       height: 100%;
-      background: linear-gradient(270.43deg,
-          rgba(32, 48, 23, 0) 23%,
-          #203017 88.11%);
+      background: linear-gradient(
+        270.43deg,
+        rgba(32, 48, 23, 0) 23%,
+        #203017 88.11%
+      );
       position: absolute;
       top: 0;
       left: 0;
@@ -16376,7 +16366,7 @@ body {
     flex: 0 0 auto;
     overflow-x: auto;
 
-    >li {
+    > li {
       margin-block: 0;
       background-color: #ffffff;
       color: #000000;
@@ -16397,19 +16387,20 @@ body {
       }
     }
 
-    >.dropdown_tabs {
+    > .dropdown_tabs {
       min-width: 120px;
       flex: 0 0 auto;
       width: 120px;
     }
 
-    &.fourm_parent {}
+    &.fourm_parent {
+    }
   }
 
   /*custom tabs*/
 
   /*booking */
-  .pTutor_sc .parent_dash .gap_m.tutoer_list>div {
+  .pTutor_sc .parent_dash .gap_m.tutoer_list > div {
     // width: calc(33% - var(--gap_x)) !important;
     padding: 0 !important;
     margin-left: var(--gap_x) !important;
@@ -16444,10 +16435,12 @@ body {
 
       &:before {
         content: "";
-        background: linear-gradient(358deg,
-            rgba(17, 16, 23, 0) 8.4%,
-            rgba(17, 16, 23, 0.325) 62.94%,
-            rgba(17, 16, 23, 0.5) 100%);
+        background: linear-gradient(
+          358deg,
+          rgba(17, 16, 23, 0) 8.4%,
+          rgba(17, 16, 23, 0.325) 62.94%,
+          rgba(17, 16, 23, 0.5) 100%
+        );
         width: 100%;
         height: 230px;
         position: absolute;
@@ -16460,10 +16453,12 @@ body {
 
       &:after {
         content: "";
-        background: linear-gradient(180deg,
-            rgba(17, 16, 23, 0) 0%,
-            rgba(17, 16, 23, 0.78) 73.96%,
-            #111017 100%);
+        background: linear-gradient(
+          180deg,
+          rgba(17, 16, 23, 0) 0%,
+          rgba(17, 16, 23, 0.78) 73.96%,
+          #111017 100%
+        );
         width: 100%;
         height: 487px;
         position: absolute;
@@ -16500,7 +16495,7 @@ body {
         }
       }
 
-      >div {
+      > div {
         position: absolute;
         top: 24px;
         right: 20px;
@@ -16523,7 +16518,7 @@ body {
       background: #ffffff26;
       border-radius: 162.82px;
 
-      >ul {
+      > ul {
         @include d_flx(center, center);
         flex-direction: column;
 
@@ -16601,20 +16596,20 @@ body {
       .des_end {
         backdrop-filter: blur(2.113654851913452px);
         background-color: #ffffff29;
-        border-radius: 11px;
-        padding: 10px;
+        border-radius: 10px;
+        padding: 8px;
 
         h5 {
-          margin-bottom: 6px;
-          font-weight: 600;
-          font-size: 16px;
+          margin-bottom: 5px;
+          font-weight: 500;
+          font-size: 15px;
           color: $c_white;
         }
 
         p {
           color: $c_white;
           margin: 0;
-          font-size: 13px;
+          font-size: 12px;
           font-weight: 400;
         }
       }
@@ -16893,7 +16888,7 @@ body {
   }
 
   .cstmm_tabs {
-    >li {
+    > li {
       padding: 5px 10px;
       width: max-content;
       max-width: 100%;
@@ -16938,22 +16933,18 @@ body {
         flex-wrap: wrap;
         gap: 20px;
 
-
-
         figure {
           width: 98px;
           height: 98px;
           border-radius: 50%;
 
-
           img {
             @include img_contain(cover);
             border-radius: 50%;
-
           }
         }
 
-        >div {
+        > div {
           h2 {
             font-weight: 700;
             font-size: 24px;
@@ -17000,7 +16991,7 @@ body {
             font-weight: 700;
             font-size: 24px;
 
-            @include breakpoint (mobile) {
+            @include breakpoint(mobile) {
               font-size: 16px;
             }
           }
@@ -17023,7 +17014,7 @@ body {
     box-shadow: 0px 2px 22px 0px rgba(0, 0, 0, 0.1019607843);
     border-radius: 15px;
 
-    >figure {
+    > figure {
       position: relative;
       margin: -20px;
       width: calc(100% + 40px);
@@ -17056,7 +17047,7 @@ body {
         }
       }
 
-      >span {
+      > span {
         position: absolute;
         top: 15px;
         right: 20px;
@@ -17169,7 +17160,7 @@ body {
             font-weight: 700;
             font-size: 24px;
 
-            @include breakpoint (mobile) {
+            @include breakpoint(mobile) {
               font-size: 16px;
             }
           }
@@ -17181,10 +17172,9 @@ body {
       margin-top: 46px;
       @include d_flx(center, space-between);
 
-      @media screen and (max-width:767px) {
+      @media screen and (max-width: 767px) {
         gap: 10px;
       }
-
 
       .lt {
         @include d_flx(center, flex-start, 20px);
@@ -17216,7 +17206,7 @@ body {
       @include d_flx(flex-start, flex-start, 14px);
       flex-wrap: nowrap;
 
-      >span {
+      > span {
         width: 34px;
         min-width: 34px;
         height: 34px;
@@ -17251,7 +17241,7 @@ body {
           }
         }
 
-        >div {
+        > div {
           h5 {
             color: #1d1d1d;
             font-weight: 700;
@@ -17425,7 +17415,7 @@ body {
     overflow: auto;
     top: 125px;
 
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width: 1200px) {
       width: 100%;
       position: initial;
       max-height: unset;
@@ -17440,7 +17430,7 @@ body {
   .rt_v2 {
     width: calc(72% - var(--gap_x));
 
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width: 1200px) {
       width: 100%;
     }
   }
@@ -17490,7 +17480,7 @@ body {
     position: relative;
     overflow: clip;
 
-    >figure {
+    > figure {
       width: calc(100% + 40px);
       margin-inline: -20px;
       position: relative;
@@ -17553,7 +17543,7 @@ body:has(.form_discuss) {
       overflow: hidden;
       margin-bottom: 0;
 
-      @media screen and (max-width:767px) {
+      @media screen and (max-width: 767px) {
         width: calc(100% - var(--gap_x));
       }
 
@@ -17601,7 +17591,7 @@ body:has(.form_discuss) {
           }
         }
 
-        >div {
+        > div {
           position: relative;
           width: 100%;
 
@@ -17614,7 +17604,6 @@ body:has(.form_discuss) {
             @include breakpoint(mobile) {
               font-size: 20px;
             }
-
           }
 
           p {
@@ -17703,7 +17692,6 @@ body:has(.form_discuss) {
           padding: 4px 10px;
           font-size: 12px;
         }
-
       }
     }
   }
@@ -17711,7 +17699,7 @@ body:has(.form_discuss) {
   .role_body {
     width: calc(72% - var(--gap_x));
 
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width: 1200px) {
       width: 100%;
     }
   }
@@ -17719,17 +17707,16 @@ body:has(.form_discuss) {
 
 /*booking card end*/
 
-
 /*address card*/
 .loc_wrap {
   .address_crd {
     width: calc(36% - var(--gap_x));
 
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width: 1200px) {
       width: 100%;
     }
 
-    @media screen and (max-width:767px) {
+    @media screen and (max-width: 767px) {
       width: calc(100% - var(--gap_x));
     }
 
@@ -17737,22 +17724,22 @@ body:has(.form_discuss) {
       width: 100%;
 
       .address_crd {
-        @media screen and (max-with:1200px) {
+        @media screen and (max-with: 1200px) {
           width: calc(100% - var(--gap_x));
         }
       }
 
       .cmn_crd_wp {
-        @media screen and (max-width:1200px) {
+        @media screen and (max-width: 1200px) {
           display: flex;
         }
 
         li {
-          @media screen and (max-width:1200px) {
+          @media screen and (max-width: 1200px) {
             width: calc(50% - var(--gap_x));
           }
 
-          @media screen and (max-width:767px) {
+          @media screen and (max-width: 767px) {
             width: calc(100% - var(--gap_x));
           }
         }
@@ -17761,7 +17748,7 @@ body:has(.form_discuss) {
           position: relative;
           overflow: hidden;
 
-          >div {
+          > div {
             @include d_flx(flex-start, flex-start, 12px);
 
             figure {
@@ -17792,7 +17779,7 @@ body:has(.form_discuss) {
                   line-height: 23px;
                 }
 
-                +p {
+                + p {
                   padding-top: 20px;
                 }
               }
@@ -17827,7 +17814,7 @@ body:has(.form_discuss) {
     padding: 20px;
     border-radius: 15px;
 
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width: 1200px) {
       width: 100%;
     }
 
@@ -17847,7 +17834,7 @@ body:has(.form_discuss) {
         @include d_flx(flex-start, flex-start, 5px);
         margin-bottom: 15px;
 
-        >div {
+        > div {
           figure {
             width: 24px;
             height: 24px;
@@ -17917,7 +17904,7 @@ body:has(.form_discuss) {
 
 .tutor_fx {
   .gap_m {
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width: 1200px) {
       margin-right: calc(var(--gap_x) * 1);
     }
 
@@ -17932,7 +17919,7 @@ body:has(.form_discuss) {
         width: 0;
       }
 
-      @media screen and (max-width:1200px) {
+      @media screen and (max-width: 1200px) {
         width: 100%;
         position: static;
         max-height: 100%;
@@ -17942,7 +17929,7 @@ body:has(.form_discuss) {
     .rt_s {
       width: calc(72% - var(--gap_x));
 
-      @media screen and (max-width:1200px) {
+      @media screen and (max-width: 1200px) {
         width: 100%;
       }
 
@@ -18001,7 +17988,7 @@ body:has(.form_discuss) {
   }
 
   ul {
-    >li {
+    > li {
       p {
         font-weight: 500;
         font-size: 16px;
@@ -18019,7 +18006,7 @@ body:has(.form_discuss) {
 
   &.social_mdl {
     ul {
-      >li {
+      > li {
         @include d_flx(flex-start, flex-start, 12px);
         flex-wrap: nowrap;
 
@@ -18188,7 +18175,7 @@ body:has(.form_discuss) {
       .input_group {
         margin-bottom: 15px;
 
-        >.MuiOutlinedInput-root {
+        > .MuiOutlinedInput-root {
           width: 100%;
           border: 1px solid #ececec;
           height: 45px;
@@ -18366,8 +18353,6 @@ body:has(.add_post) {
 
   .form {
     .control_group {
-    
-
       fieldset {
         display: none;
       }
@@ -18382,52 +18367,58 @@ body:has(.add_post) {
 
       // Has One - Li
       &:has(> .upload_file:only-child) {
-        >.upload_file {
+        > .upload_file {
           grid-area: 1 / 1 / 3 / 3;
         }
       }
 
       // Has Two - .upload_file
-      &:has(> .upload_file:nth-child(2)):not( :has(> .upload_file:nth-child(3))) {
-        >.upload_file:nth-child(1) {
+      &:has(> .upload_file:nth-child(2)):not(
+          :has(> .upload_file:nth-child(3))
+        ) {
+        > .upload_file:nth-child(1) {
           grid-area: 1 / 1 / 3 / 2;
         }
 
-        >.upload_file:nth-child(2) {
+        > .upload_file:nth-child(2) {
           grid-area: 1 / 2 / 3 / 3;
         }
       }
 
       // Has Three - .upload_file
-      &:has(> .upload_file:nth-child(3)):not( :has(> .upload_file:nth-child(4))) {
-        >.upload_file:nth-child(1) {
+      &:has(> .upload_file:nth-child(3)):not(
+          :has(> .upload_file:nth-child(4))
+        ) {
+        > .upload_file:nth-child(1) {
           grid-area: 1 / 1 / 3 / 2;
         }
 
-        >.upload_file:nth-child(2) {
+        > .upload_file:nth-child(2) {
           grid-area: 1 / 2 / 2 / 3;
         }
 
-        >.upload_file:nth-child(3) {
+        > .upload_file:nth-child(3) {
           grid-area: 2 / 2 / 3 / 3;
         }
       }
 
       // Has Four - .upload_file
-      &:has(> .upload_file:nth-child(4)):not( :has(> .upload_file:nth-child(5))) {
-        >.upload_file:nth-child(1) {
+      &:has(> .upload_file:nth-child(4)):not(
+          :has(> .upload_file:nth-child(5))
+        ) {
+        > .upload_file:nth-child(1) {
           grid-area: 1 / 1 / 2 / 2;
         }
 
-        >.upload_file:nth-child(2) {
+        > .upload_file:nth-child(2) {
           grid-area: 1 / 2 / 2 / 3;
         }
 
-        >.upload_file:nth-child(3) {
+        > .upload_file:nth-child(3) {
           grid-area: 2 / 1 / 3 / 2;
         }
 
-        >.upload_file:nth-child(4) {
+        > .upload_file:nth-child(4) {
           grid-area: 2 / 2 / 3 / 3;
         }
       }
@@ -18760,7 +18751,7 @@ body:has(.MuiPopover-paper) {
     .role_body {
       width: calc(72% - var(--gap_x));
 
-      @media screen and (max-width:1200px) {
+      @media screen and (max-width: 1200px) {
         width: 100%;
       }
     }
@@ -18768,7 +18759,7 @@ body:has(.MuiPopover-paper) {
     .sidebar_rt {
       width: calc(28% - var(--gap_x));
 
-      @media screen and (max-width:1200px) {
+      @media screen and (max-width: 1200px) {
         width: 100%;
       }
     }
@@ -18973,7 +18964,7 @@ body:has(.MuiPopover-paper) {
           color: #333;
         }
 
-        +ol {
+        + ol {
           list-style: none;
           padding: 0;
 
@@ -19261,7 +19252,7 @@ body:has(.MuiPopover-paper) {
               flex-wrap: nowrap;
               font-size: 15px;
 
-              >span {
+              > span {
                 width: 20px;
                 height: 20px;
 
@@ -19373,7 +19364,7 @@ body:has(.enroll_mdl) {
     li {
       position: relative;
 
-      >div {
+      > div {
         @include d_flx(flex-start, flex-start, 20px);
 
         figure {
@@ -19766,7 +19757,7 @@ body:has(.enroll_mdl) {
       flex-wrap: wrap;
       justify-content: flex-start;
 
-      @media screen and (max-width:1200px) {
+      @media screen and (max-width: 1200px) {
         padding: 0;
       }
     }
@@ -19774,7 +19765,7 @@ body:has(.enroll_mdl) {
     .saved_fdx {
       width: calc(100% / 2 - 20px * 1 / 2);
 
-      @media screen and (max-width:1200px) {
+      @media screen and (max-width: 1200px) {
         width: calc(100% / 1 - 20px * 1 / 1);
       }
     }
@@ -19787,7 +19778,7 @@ body:has(.enroll_mdl) {
       flex-wrap: wrap;
       justify-content: flex-start;
 
-      @media screen and (max-width:1200px) {
+      @media screen and (max-width: 1200px) {
         padding: 0;
       }
     }
@@ -19801,9 +19792,7 @@ body:has(.enroll_mdl) {
 
       @include breakpoint(mobile_s) {
         width: 100%;
-
       }
-
     }
   }
 }
@@ -19845,7 +19834,7 @@ body:has(.enroll_mdl) {
     font-size: 18px;
   }
 
-  .MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track {
+  .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
     background-color: #73c646 !important;
   }
 }
@@ -19904,7 +19893,7 @@ body:has(.enroll_mdl) {
       top: 14px;
       padding-inline: 10px;
 
-      >div {
+      > div {
         @include d_flx(center, flex-start, 10px);
       }
 
@@ -20132,19 +20121,19 @@ body:has(.enroll_mdl) {
   @media screen and (max-width: 767px) {
     flex-wrap: wrap;
   }
-  label{
-    figure{
-  width: 100px;
-  height: 100px;
-  img{
-    @include img_contain(contain);
-  }
-}
+  label {
+    figure {
+      width: 100px;
+      height: 100px;
+      img {
+        @include img_contain(contain);
+      }
+    }
   }
 }
 
 .create_classes {
-  .upload_file>figure {
+  .upload_file > figure {
     height: 160px;
 
     img {
@@ -20277,7 +20266,6 @@ body:has(.enroll_mdl) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
   }
 }
 
@@ -20303,14 +20291,13 @@ body:has(.enroll_mdl) {
       }
     }
 
-    +p {
+    + p {
       color: $c_primary;
       font-size: 16px;
       text-align: left;
     }
   }
 }
-
 
 .add_poll {
   .form_group {
@@ -20337,22 +20324,18 @@ body:has(.enroll_mdl) {
         margin-bottom: 0;
       }
     }
-   
   }
 }
-.option_main{
-  +button{
-  margin: 15px 0 10px;
-  +p{
+.option_main {
+  + button {
+    margin: 15px 0 10px;
+    + p {
       margin-bottom: 15px;
+    }
+  }
 }
-}
-
-}
-
 
 /*poll option scss end*/
-
 
 .fb-photo-grid {
   .grid {
@@ -20428,7 +20411,6 @@ body:has(.enroll_mdl) {
   }
 }
 
-
 .class_head {
   font-size: 20px;
   color: black;
@@ -20443,7 +20425,6 @@ body:has(.enroll_mdl) {
   font-weight: 500;
   margin-top: 20px;
   margin-bottom: -10px;
-
 }
 
 /* Free classes cards */
@@ -20640,7 +20621,6 @@ body:has(.enroll_mdl) {
       }
     }
   }
-
 }
 
 /* Responsive adjustments for ImageGrid and related content */
@@ -20813,7 +20793,7 @@ body:has(.enroll_mdl) {
 .hamb_icon {
   display: none;
 
-  @media (max-width:1200px) {
+  @media (max-width: 1200px) {
     display: inline-flex;
   }
 }
@@ -20839,7 +20819,6 @@ body:has(.enroll_mdl) {
     width: 100%;
     height: calc(100vh - 90px);
     backdrop-filter: blur(5px);
-
   }
 
   .icon_flex.active {
@@ -20884,10 +20863,9 @@ body:has(.enroll_mdl) {
       display: block;
     }
   }
-
 }
 
-@media (max-width:1200px) {
+@media (max-width: 1200px) {
   body:has(.list_wrapper.active) {
     .content {
       overflow: unset;
@@ -20901,17 +20879,17 @@ body:has(.no_data) {
   }
 }
 body:has(.no_data) {
- .home_wrp .grid_three .md_ul {
+  .home_wrp .grid_three .md_ul {
     width: calc(74% - var(--gap_x));
   }
 }
 
-body:has(.ovr_flow video){
-  .upload_file{
+body:has(.ovr_flow video) {
+  .upload_file {
     padding: 0;
-    figure{
+    figure {
       width: 100%;
-      video{
+      video {
         width: 100%;
         object-fit: cover;
         border-radius: 15px;
