@@ -75,11 +75,12 @@ export default function ParentBookings() {
     limit: 12,
   },{skip:tab==2});
 
-  const handleJoinCallByParent = (id: string) => {
-    navigate(`/zoom-call/${id}?type=parent`, {
+  
+  const handleJoinCallByParent = (item: any) => {
+    navigate(`/dyte-call/${item?._id}?type=parent`, {
       state: {
         data: {
-          sessionName: id,
+          dyteId: item?.classData?.dyteMeeting?.meetingId,
           displayName: user?.name,
           roleType: "0",
           sessionIdleTimeoutMins: "60",
@@ -562,7 +563,7 @@ export default function ParentBookings() {
                                           })
                                           setOpenRate(true)
                                         }} > <GradeIcon />Rate Now </b>
-                                        <button onClick={() => handleJoinCallByParent(item?.classSlots?._id)} className="btn btn-primary">Join</button>
+                                        <button onClick={() => handleJoinCallByParent(item)} className="btn btn-primary">Join</button>
                                       </div>
                                     </div>
                                   </div>
