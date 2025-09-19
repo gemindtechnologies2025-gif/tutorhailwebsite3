@@ -1,39 +1,37 @@
 import * as React from "react";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import ShareIcon from "@mui/icons-material/Share";
-import GradeIcon from "@mui/icons-material/Grade";
-import { CHAT_TYPE, EDUCATION_ENUM_DISPLAY, GRADE_TYPE_NAME, HIGHER_EDUCATION_TYPE } from "../constants/enums";
+import {
+  CHAT_TYPE,
+  EDUCATION_ENUM_DISPLAY,
+  GRADE_TYPE_NAME,
+} from "../constants/enums";
 import { useNavigate } from "react-router-dom";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useAddWishListMutation } from "../service/wishListApi";
-import { wishList } from "../types/General";
 import { showError, showToast, showWarning } from "../constants/toast";
-import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
-import StarIcon from '@mui/icons-material/Star';
-import HowToRegOutlinedIcon from '@mui/icons-material/HowToRegOutlined';
-import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
-import QueryBuilderOutlinedIcon from '@mui/icons-material/QueryBuilderOutlined';
-import SupervisorAccountOutlinedIcon from '@mui/icons-material/SupervisorAccountOutlined';
-import FavoriteBorderSharpIcon from '@mui/icons-material/FavoriteBorderSharp';
-import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
-import IosShareSharpIcon from '@mui/icons-material/IosShareSharp';
+import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
+import StarIcon from "@mui/icons-material/Star";
+import HowToRegOutlinedIcon from "@mui/icons-material/HowToRegOutlined";
+import PersonAddAltOutlinedIcon from "@mui/icons-material/PersonAddAltOutlined";
+import QueryBuilderOutlinedIcon from "@mui/icons-material/QueryBuilderOutlined";
+import SupervisorAccountOutlinedIcon from "@mui/icons-material/SupervisorAccountOutlined";
+import FavoriteBorderSharpIcon from "@mui/icons-material/FavoriteBorderSharp";
+import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
+import IosShareSharpIcon from "@mui/icons-material/IosShareSharp";
 import { RWebShare } from "react-web-share";
 import { useFollowTutorMutation } from "../service/content";
 import { REDIRECTLINK } from "../constants/url";
 import { convertCurrency } from "../utils/currency";
 import { useAppSelector } from "../hooks/store";
-import { currencyMode, currencySymbol, selectCurrencyRates, selectCurrentCurrency } from "../reducers/currencySlice";
+import {
+  currencyMode,
+  currencySymbol,
+  selectCurrencyRates,
+  selectCurrentCurrency,
+} from "../reducers/currencySlice";
 import { getFromStorage } from "../constants/storage";
 import { STORAGE_KEYS } from "../constants/storageKeys";
 import LoginAlertModal from "../Modals/LoginAlertModal";
 
-type TeachingDetails = {
-  totalTeachingExperience: number;
-  price?: number;
-  specialization: string;
-  achievement: string;
-  higherEdu: number;
-};
 type props = {
   isWishlist?: boolean;
   wishlistUpdate?: any;
@@ -68,21 +66,22 @@ type props = {
 
 const TutorsCard = React.forwardRef<HTMLDivElement, props>(
   ({ item, isWishlist, wishlistUpdate }, ref) => {
-
     const navigate = useNavigate();
     const [addWishlist] = useAddWishListMutation();
     const [follow, setFollow] = React.useState<boolean>(item?.isFollowing);
-    const [showIcon, setShowIcon] = React.useState<boolean>(item.isFav || false);
+    const [showIcon, setShowIcon] = React.useState<boolean>(
+      item.isFav || false
+    );
     const [followTutor] = useFollowTutorMutation();
     const currencyRates = useAppSelector(selectCurrencyRates);
     const currentCurrency = useAppSelector(selectCurrentCurrency);
     const currentCurrencyMode = useAppSelector(currencyMode);
     const currentCurrencySymbol = useAppSelector(currencySymbol);
     const token = getFromStorage(STORAGE_KEYS.token);
-     const [open2, setOpen2] = React.useState<boolean>(false);
-      const handleClose2 = () => {
-        setOpen2(false);
-      };
+    const [open2, setOpen2] = React.useState<boolean>(false);
+    const handleClose2 = () => {
+      setOpen2(false);
+    };
 
     const followTutorFunc = async () => {
       const body = {
@@ -91,7 +90,7 @@ const TutorsCard = React.forwardRef<HTMLDivElement, props>(
       try {
         const res = await followTutor(body).unwrap();
         if (res?.statusCode == 200) {
-          setFollow(!follow)
+          setFollow(!follow);
         }
       } catch (error: any) {
         showError(error?.data?.message || "Something went wrong");
@@ -112,22 +111,32 @@ const TutorsCard = React.forwardRef<HTMLDivElement, props>(
           } else {
             showToast("Tutor added to wishlist");
             setShowIcon(true);
-          } 
+          }
           // wishlistUpdate && wishlistUpdate();
         }
-      } catch (error: any) { }
+      } catch (error: any) {}
     };
 
     return (
       <div ref={ref} className="tutors_card tutor_card_v2">
         {/* Banner */}
         <div className="banner">
-          <img onClick={() => navigate(`/parent/tutorProfieDetails/${isWishlist ? item?.tutorId : item?._id}`)} src={item?.bannerImg || `/static/images/profile_bg.png`} alt="tutors_bg" />
+          <img
+            onClick={() =>
+              navigate(
+                `/parent/tutorProfieDetails/${isWishlist ? item?.tutorId : item?._id}`
+              )
+            }
+            src={item?.bannerImg || `/static/images/profile_bg.png`}
+            alt="tutors_bg"
+          />
 
           <div className="wishlist_icons">
-
             {/* Wishlist */}
-            <button className="icon_btn" onClick={() =>token ?  handleWishList(item):setOpen2(true)}>
+            <button
+              className="icon_btn"
+              onClick={() => (token ? handleWishList(item) : setOpen2(true))}
+            >
               {showIcon ? <FavoriteIcon /> : <FavoriteBorderSharpIcon />}
             </button>
 
@@ -142,19 +151,21 @@ const TutorsCard = React.forwardRef<HTMLDivElement, props>(
                 <IosShareSharpIcon />
               </button>
             </RWebShare>
-            
-
-
-
           </div>
         </div>
 
         {/* Profile Details */}
         <div className="profile_area">
           {/* Avatar */}
-          <figure onClick={() => navigate(`/parent/tutorProfieDetails/${isWishlist ? item?.tutorId : item?._id}`)} className={`avatar ${item?.isActive || item?.tutors?.isActive ?  "active_border":""}`}>
+          <figure
+            onClick={() =>
+              navigate(
+                `/parent/tutorProfieDetails/${isWishlist ? item?.tutorId : item?._id}`
+              )
+            }
+            className={`avatar ${item?.isActive || item?.tutors?.isActive ? "active_border" : ""}`}
+          >
             <img
-           
               src={
                 isWishlist
                   ? item?.tutors?.image || `/static/images/emaa.png`
@@ -168,17 +179,21 @@ const TutorsCard = React.forwardRef<HTMLDivElement, props>(
           <h3 className="name">
             {isWishlist ? item?.tutors?.name || "User" : item?.name || "User"}
             <div>
-
               {item?.documentVerification ? (
-                <span className="verify_icon" >
-                  <img width={25} src='/static/images/verified.png' />
-
+                <span className="verify_icon">
+                  <img width={25} src="/static/images/verified.png" />
                 </span>
               ) : null}
 
-              <span className="verify_icon" onClick={() =>token ?  followTutorFunc():setOpen2(true)}>
-                {follow ? (<HowToRegOutlinedIcon />) : (<PersonAddAltOutlinedIcon />)}
-
+              <span
+                className="verify_icon"
+                onClick={() => (token ? followTutorFunc() : setOpen2(true))}
+              >
+                {follow ? (
+                  <HowToRegOutlinedIcon />
+                ) : (
+                  <PersonAddAltOutlinedIcon />
+                )}
               </span>
             </div>
           </h3>
@@ -189,12 +204,32 @@ const TutorsCard = React.forwardRef<HTMLDivElement, props>(
               <SchoolOutlinedIcon />
             </span>
             {isWishlist
-              ? EDUCATION_ENUM_DISPLAY[item?.teachingdetails?.[0]?.higherEdu] +", "+ item?.teachingdetails?.[0]?.specialization || ""
-              : EDUCATION_ENUM_DISPLAY[item?.teachingdetails?.higherEdu] +", "+item?.teachingdetails?.specialization || ""}
+              ? [
+                  EDUCATION_ENUM_DISPLAY[
+                    item?.teachingdetails?.[0]?.higherEdu
+                  ] ?? "",
+                  item?.teachingdetails?.[0]?.specialization ?? "",
+                ]
+                  .filter(Boolean)
+                  .join(", ")
+              : [
+                  EDUCATION_ENUM_DISPLAY[item?.teachingdetails?.higherEdu] ??
+                    "",
+                  item?.teachingdetails?.specialization ?? "",
+                ]
+                  .filter(Boolean)
+                  .join(", ")}
           </p>
 
           {/* Rating */}
-          <div onClick={() => navigate(`/parent/tutorProfieDetails/${isWishlist ? item?.tutorId : item?._id}`)} className="rating">
+          <div
+            onClick={() =>
+              navigate(
+                `/parent/tutorProfieDetails/${isWishlist ? item?.tutorId : item?._id}`
+              )
+            }
+            className="rating"
+          >
             <span className="star">
               <StarIcon />
             </span>
@@ -202,16 +237,23 @@ const TutorsCard = React.forwardRef<HTMLDivElement, props>(
           </div>
 
           {/* Subjects */}
-          <div onClick={() => navigate(`/parent/tutorProfieDetails/${isWishlist ? item?.tutorId : item?._id}`)} className="subjects">
+          <div
+            onClick={() =>
+              navigate(
+                `/parent/tutorProfieDetails/${isWishlist ? item?.tutorId : item?._id}`
+              )
+            }
+            className="subjects"
+          >
             {item?.subjects?.length ? (
               <>
-                {item?.subjects?.slice(0, 1)?.map((sub: any, idx) => (
+                {item.subjects.slice(0, 2).map((sub: any, idx) => (
                   <span key={idx} className="tag">
-                    {isWishlist ? sub?.name :sub|| ""}
+                    {isWishlist ? sub?.name : sub || ""}
                   </span>
                 ))}
-                {item.subjects.length > 1 && (
-                  <span className="tag">+{item.subjects.length - 1}</span>
+                {item.subjects.length > 2 && (
+                  <span className="tag">+{item.subjects.length - 2}</span>
                 )}
               </>
             ) : (
@@ -220,7 +262,14 @@ const TutorsCard = React.forwardRef<HTMLDivElement, props>(
           </div>
 
           {/* Stats */}
-          <div onClick={() => navigate(`/parent/tutorProfieDetails/${isWishlist ? item?.tutorId : item?._id}`)} className="stats">
+          <div
+            onClick={() =>
+              navigate(
+                `/parent/tutorProfieDetails/${isWishlist ? item?.tutorId : item?._id}`
+              )
+            }
+            className="stats"
+          >
             <div>
               <QueryBuilderOutlinedIcon />{" "}
               {isWishlist
@@ -229,11 +278,18 @@ const TutorsCard = React.forwardRef<HTMLDivElement, props>(
               years
             </div>
             <div>
-              <SupervisorAccountOutlinedIcon /> {item?.teachingdetails?.classes?.length ? GRADE_TYPE_NAME[item?.teachingdetails?.classes?.[0]] : ""}
+              <SupervisorAccountOutlinedIcon />{" "}
+              {item?.teachingdetails?.classes?.length
+                ? GRADE_TYPE_NAME[item?.teachingdetails?.classes?.[0]]
+                : ""}
             </div>
             <div>
               <SupervisorAccountOutlinedIcon />{" "}
-              {item?.tutors?.followers ? item?.tutors?.followers : item?.followers ? item?.followers : 0}
+              {item?.tutors?.followers
+                ? item?.tutors?.followers
+                : item?.followers
+                  ? item?.followers
+                  : 0}
             </div>
             <div>
               <RemoveRedEyeOutlinedIcon /> {item?.views || 0}
@@ -251,9 +307,7 @@ const TutorsCard = React.forwardRef<HTMLDivElement, props>(
                     ? item?.teachingdetails?.[0]?.usdPrice
                     : 0,
               rate: currencyRates[currentCurrency],
-            })?.toLocaleString(`${currentCurrencyMode}`)}`
-            }
-
+            })?.toLocaleString(`${currentCurrencyMode}`)}`}
 
             <span>/hr</span>
           </div>
@@ -261,35 +315,54 @@ const TutorsCard = React.forwardRef<HTMLDivElement, props>(
           {/* Action Buttons */}
           <div className="actions">
             <button
-              onClick={() => { !token ? setOpen2(true) : 
-                follow ? navigate('/parent/chat', {
-                  state: {
-                    bookingId: '',
-                    connectionId: '',
-                    bookingStatus: '',
-                    name: item?.name || '',
-                    image: item?.image || '',
-                    tutorId: item?._id,
-                    type: CHAT_TYPE.NORMAL,
-                    tutorVerified: item?.documentVerification,
-                  }
-                }) : showWarning("Please follow tutor to send a message")
+              onClick={() => {
+                !token
+                  ? setOpen2(true)
+                  : follow
+                    ? navigate("/parent/chat", {
+                        state: {
+                          bookingId: "",
+                          connectionId: "",
+                          bookingStatus: "",
+                          name: item?.name || "",
+                          image: item?.image || "",
+                          tutorId: item?._id,
+                          type: CHAT_TYPE.NORMAL,
+                          tutorVerified: item?.documentVerification,
+                        },
+                      })
+                    : showWarning("Please follow tutor to send a message");
               }}
-              className="chat_btn">
+              className="chat_btn"
+            >
               <i className="fa fa-comment-o"></i> Chat
             </button>
-            <button disabled={item?.isActive ? false : true} style={!item?.isActive ? { backgroundColor: 'grey', color: "black" } : {}} onClick={() => token ? navigate(`/parent/ScheduleBookings/${item?._id}`):setOpen2(true)} className="book_btn">{item?.isActive ? "Book Now" : "Schedule"}</button>
+            <button
+              disabled={item?.isActive ? false : true}
+              style={
+                !item?.isActive
+                  ? { backgroundColor: "grey", color: "black" }
+                  : {}
+              }
+              onClick={() =>
+                token
+                  ? navigate(`/parent/ScheduleBookings/${item?._id}`)
+                  : setOpen2(true)
+              }
+              className="book_btn"
+            >
+              {item?.isActive ? "Book Now" : "Schedule"}
+            </button>
           </div>
         </div>
-         <LoginAlertModal
-                open={open2}
-                setOpen={setOpen2}
-                onClose={handleClose2}
-                msg="Please login"
-              />
+        <LoginAlertModal
+          open={open2}
+          setOpen={setOpen2}
+          onClose={handleClose2}
+          msg="Please login"
+        />
       </div>
-
     );
   }
-)
+);
 export default TutorsCard;
