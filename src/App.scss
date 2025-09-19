@@ -13431,12 +13431,12 @@ body {
       border-radius: 15px;
       box-shadow: 0px 2px 22px 0px #0000001a;
       padding: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
 
       li {
         @include d_flx(center, space-between);
         transition: $transition;
-        margin-bottom: 30px;
+        margin-bottom: 18px;
 
         > figure {
           @include d_flx(center, flex-start, 10px);
@@ -13809,14 +13809,14 @@ body {
     }
 
     .count_like {
-      margin-bottom: 10px;
+      margin-bottom: 5px;
 
       ul {
         @include d_flx(center, space-between, 42px);
         flex-wrap: nowrap;
         background: #6bb5774f;
-        padding: 15px 24px;
-        border-radius: 30px;
+        padding: 5px 10px;
+        border-radius: 20px;
 
         li {
           margin: 0;
@@ -13879,9 +13879,9 @@ body {
     > .row {
       @include d_flx(center, space-between);
       border-top: 1px solid #f4f4f4;
-      padding-top: 10px;
+      padding-top: 8px;
       margin-inline: -15px;
-      padding-inline: 21px;
+      padding-inline: 25px;
 
       .lt_s {
         @include d_flx(center, flex-start, 10px);
@@ -16370,16 +16370,15 @@ body {
       margin-block: 0;
       background-color: #ffffff;
       color: #000000;
-      box-shadow: 0px 2.44px 17.05px 0px rgba(0, 0, 0, 0.1490196078);
-      font-size: 14px;
-      font-weight: 400;
+      font-size: 10px;
+      font-weight: 300;
       border: 1px solid #65a442;
-      border-radius: 30px;
+      border-radius: 25px;
       text-align: center;
       display: inline-block;
       white-space: nowrap;
-      margin-bottom: 8px;
-      padding: 5px 8px;
+      margin-bottom: 5px;
+      padding: 4px 4px;
 
       &.green {
         background-color: #65a442;
@@ -19798,17 +19797,17 @@ body:has(.enroll_mdl) {
 }
 
 .cstmmm_tabs_1 {
-  margin-block: 15px !important;
-  padding-bottom: 10px;
+  margin-block: 10px !important;
+  padding-bottom: 3px;
 
   li {
     min-width: 120px;
     flex: 0 0 auto;
-    width: 120px;
-    margin-bottom: 10px !important;
+    width: 150px;
+    margin-bottom: 5px !important;
 
     .MuiInputBase-root {
-      height: 35px;
+      height: 30px;
 
       fieldset {
         display: none;
@@ -20897,3 +20896,115 @@ body:has(.ovr_flow video) {
     }
   }
 }
+// ....................................................................................
+/* For small phones: 425px and below */
+// @media screen and (max-width: 425px) {
+//   .reels_wp {
+//     max-width: 100vw !important;
+//     margin-inline: 0;
+//     border-radius: 15px;
+//   }
+//   .video_mn {
+//     height: calc(100vh - 85px) !important;
+//     border-radius: 0 0 12px 12px;
+//   }
+//   .video_mn video {
+//     border-radius: inherit;
+//     min-height: 220px;
+//     min-width: 100vw;
+//   }
+//   .video_sidebar {
+//     max-width: 46px;
+//     height: 195px;
+//     right: 2vw;
+//     bottom: 58px;
+//     padding: 2px !important;
+//     border-radius: 92px;
+//   }
+//   .video_sidebar1 {
+//     background: rgba(0, 0, 0, 0.13);
+//     border-radius: 35px;
+//     padding: 6px 2px !important;
+//   }
+//   .video_footer {
+//     bottom: 9px;
+//     left: 9px;
+//     right: 9px;
+//     padding: 8px 7px;
+//     font-size: 13px !important;
+//   }
+//   .video_footer .btn_grp button {
+//     font-size: 11px;
+//     padding: 3px 12px;
+//     margin-bottom: 5px;
+//     border-radius: 7px;
+//   }
+//   .video_footer .des_end {
+//     font-size: 10px;
+//     padding: 6px;
+//     h5 {
+//       font-size: 12px;
+//     }
+//     p {
+//       font-size: 10px;
+//     }
+//   }
+//   .video_header ul li span,
+//   .video_header > div img {
+//     font-size: 11px !important;
+//   }
+//   .video_mn:after {
+//     height: 250px !important;
+//   }
+// }
+
+// /* For ultra-small devices: 375px and below */
+// @media screen and (max-width: 375px) {
+//   .reels_wp {
+//     min-width: 100vw !important;
+//     max-width: 100vw !important;
+//     border-radius: 9px;
+//   }
+//   .video_mn {
+//     height: calc(100vh - 60px) !important;
+//     border-radius: 0;
+//   }
+//   .video_mn video {
+//     min-height: 170px !important;
+//     min-width: 100vw !important;
+//   }
+//   .video_footer {
+//     bottom: 5px;
+//     left: 4px;
+//     right: 4px;
+//     padding: 6px 5px;
+//     font-size: 11px !important;
+//   }
+//   .video_sidebar {
+//     max-width: 40px;
+//     right: 1vw;
+//     bottom: 36px;
+//     height: 120px;
+//     border-radius: 60px;
+//     padding: 2px 1px;
+//   }
+//   .video_footer .btn_grp button {
+//     font-size: 10px;
+//     padding: 3px 9px;
+//     border-radius: 5px;
+//   }
+//   .video_footer .des_end {
+//     font-size: 9px;
+//     padding: 5px;
+//     h5 {
+//       font-size: 10px;
+//     }
+//     p {
+//       font-size: 9px;
+//     }
+//   }
+//   .video_header ul li span,
+//   .video_header > div img {
+//     font-size: 10px !important;
+//   }
+// }
